@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.kotlin.mypokedexapp"
-    compileSdk = 34
+    namespace = "com.example.kotlin.examenpractico"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.kotlin.mypokedexapp"
-        minSdk = 21
-        targetSdk = 34
+        applicationId = "com.example.kotlin.examenpractico"
+        minSdk = 24
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -33,10 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -44,27 +40,14 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    //Glide
-    implementation(libs.glide)
-    annotationProcessor (libs.compiler)
-    implementation(libs.glide.transformations)
-    //Corrutinas
-    implementation(libs.kotlinx.coroutines.android)
-    //Fragment
-    implementation (libs.androidx.fragment.ktx)
-    //Activity
-    implementation (libs.androidx.activity.ktx)
-    //Data binding
-    implementation (libs.androidx.databinding.runtime)
-    // ViewModel
-    implementation (libs.androidx.lifecycle.viewmodel.ktx)
-    // LiveData
-    implementation (libs.androidx.lifecycle.livedata.ktx)
-    }
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.fragment:fragment-ktx:1.6.1")
+
+}
